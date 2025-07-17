@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+
+<html lang="hu">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hegyhátsáli Vendégház | Hangulatos vidéki szállás</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+        
+
+        body {
+
+            font-family: 'Montserrat', sans-serif;
+
+            background-color: #f8f4e9;
+
+            color: #3a3226;
+
+        }
+
+        
+
+        .art-deco-border {
+
+            border-bottom: 4px solid #c19a6b;
+
+            position: relative;
+
+        }
+
+        
+
+        .art-deco-border:after {
+
+            content: "";
+
+            position: absolute;
+
+            bottom: -8px;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 2px;
+
+            background-color: #8b6f47;
+
+        }
+
+        
+
+        .hero {
+
+            /* Updated hero background image to use the new main.jpg from your GitHub repository */
+            background: linear-gradient(rgba(58, 50, 38, 0.7), rgba(58, 50, 38, 0.7)),
+                        url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Main.jpg');
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+        
+
+        .apartment-card {
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        }
+
+        
+
+        .apartment-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+
+        }
+
+        
+
+        .testimonial-card {
+
+            background-color: #f0e6d2;
+
+            border-left: 4px solid #c19a6b;
+
+        }
+
+        
+
+        .gold-text {
+
+            color: #c19a6b;
+
+        }
+
+        
+
+    .gold-bg {
+
+            background-color: #c19a6b;
+
+        }
+
+        
+
+        .gold-border {
+
+            border-color: #c19a6b;
+
+        }
+
+        
+
+        .h-96 {
+
+            height: 24rem;
+
+        }
+
+        
+
+        .font-playfair {
+
+            font-family: 'Playfair Display', serif;
+
+        }
+
+        
+
+        .zigzag {
+
+            position: relative;
+
+            height: 30px;
+
+            background: #f8f4e9;
+
+        }
+
+        
+
+        .zigzag:after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 15px;
+
+            background: linear-gradient(135deg, #f8f4e9 15px, transparent 0) 0 15px,
+
+                        linear-gradient(225deg, #f8f4e9 15px, transparent 0) 0 15px;
+
+            background-size: 30px 30px;
+
+        }
+
+        
+
+        .nav-link {
+
+            position: relative;
+
+        }
+
+        
+
+        .nav-link:after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 0;
+
+            height: 2px;
+
+            bottom: -2px;
+
+            left: 0;
+
+            background-color: #c19a6b;
+
+            transition: width 0.3s ease;
+
+        }
+
+        
+
+        .nav-link:hover:after {
+
+            width: 100%;
+
+        }
+
+        
+
+        .language-switcher {
+
+            position: relative;
+
+            display: inline-block;
+
+        }
+
+        
+
+        .language-dropdown {
+
+            display: none;
+
+            position: absolute;
+
+            right: 0;
+
+            background-color: white;
+
+            min-width: 100px;
+
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+            z-index: 1;
+
+            border-radius: 4px;
+
+        }
+
+        
+
+        .language-switcher:hover .language-dropdown {
+
+            display: block;
+
+        }
+
+        
+
+        .language-dropdown a {
+
+            color: #3a3226;
+
+            padding: 8px 12px;
+
+            text-decoration: none;
+
+            display: block;
+
+        }
+
+        
+
+        .language-dropdown a:hover {
+
+            background-color: #f0e6d2;
+
+        }
+
+        
+
+        .booking-btn {
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .booking-btn:hover {
+
+            background-color: #a58259;
+
+            transform: translateY(-2px);
+
+        }
+
+        
+
+        /* Custom BBQ icon */
+
+        .bbq-icon {
+
+            display: inline-block;
+
+            width: 24px;
+
+            height: 24px;
+
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c19a6b'%3E%3Cpath d='M17.5 5a3.5 3.5 0 0 1 3.5 3.5v.5h-1v-.5a2.5 2.5 0 0 0-2.5-2.5h-9A2.5 2.5 0 0 0 6 8.5V9H5v-.5A3.5 3.5 0 0 1 8.5 5h9z'/%3E%3Cpath d='M5 10h14v1.5a3.5 3.5 0 0 1-3.5 3.5h-1v1h1a4.5 4.5 0 0 0 4.5-4.5V10h1v1.5a5.5 5.5 0 0 1-5.5 5.5h-7A5.5 5.5 0 0 1 4 11.5V10h1z'/%3E%3Cpath d='M5 12v-.5A3.5 3.5 0 0 1 8.5 8h7a3.5 3.5 0 0 1 3.5 3.5v.5H5zm0 1h14v.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 5 13.5V13zm2 3h10v1H7v-1z'/%3E%3C/svg%3E");
+
+            background-repeat: no-repeat;
+
+            background-position: center;
+
+        }
+
+        /* Fade-in on scroll effect */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-on-scroll.fade-in-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Sticky navigation bar styles */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .sticky-nav .container {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .sticky-nav .text-2xl {
+            font-size: 1.5rem; /* Slightly smaller font for compact nav */
+        }
+
+        .sticky-nav .space-x-8 a {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Lightbox styles */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .lightbox-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10001;
+            background: none;
+            border: none;
+            padding: 0;
+            line-height: 1;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="bg-gray-900 text-white text-sm py-2 px-4 flex justify-between items-center">
+
+        <div>
+
+            <span class="gold-text"><i class="fas fa-envelope mr-1"></i> almasikutny@gmail.com</span>
+
+        </div>
+
+        <div class="flex space-x-4 items-center">
+
+            <div class="language-switcher">
+
+                <button class="flex items-center gold-text">
+
+                    <i class="fas fa-globe mr-1"></i>
+
+                    <span class="lang-current">HU</span>
+
+                    <i class="fas fa-chevron-down ml-1 text-xs"></i>
+
+                </button>
+
+                <div class="language-dropdown">
+
+                    <a href="#" class="lang-option" data-lang="hu">Magyar</a>
+
+                    <a href="#" class="lang-option" data-lang="en">English</a>
+
+                </div>
+
+            </div>
+
+            <div class="flex space-x-4">
+
+                <a href="https://www.facebook.com/chateauschaal" target="_blank" class="hover:gold-text transition"><i class="fab fa-facebook-f"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+    <nav class="bg-white shadow-sm" id="main-navbar">
+
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+            <div class="text-2xl font-playfair font-bold gold-text">HEGYHÁTSÁLI VENDÉGHÁZ</div>
+
+            <div class="hidden md:flex space-x-8">
+
+                <a href="#" class="nav-link" data-key="nav-home">Kezdőlap</a>
+
+                <a href="#apartments" class="nav-link" data-key="nav-apartments">Apartmanok</a>
+
+                <a href="#amenities" class="nav-link" data-key="nav-amenities">Szolgáltatások</a>
+
+                <a href="#neighborhood" class="nav-link" data-key="nav-neighborhood">Környék</a>
+
+                <a href="#contact" class="nav-link" data-key="nav-contact">Kapcsolat</a>
+
+                <a href="https://www.booking.com/hotel/hu/kutny-residence-chateau-schaal-hegyhatsal.hu.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaA6IAQGYARG4ARfIAQ_YAQHoAQH4AQyIAgGoAgO4Asfa0cEGwAIB0gIkNDBlMmRjMWMtMDc3MC00YWMzLWJjZWUtY2M2ZDc1M2RlNDA52AIG4AIB&sid=3fceb0e7803fdb0473ca72152fe16c03&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1748266333&srpvid=dae65f2b336e0361&type=total&ucfs=1&" target="_blank" class="px-4 py-2 gold-bg text-white hover:bg-opacity-90 transition booking-btn" data-key="nav-book">Foglalás</a>
+
+            </div>
+
+            <button class="md:hidden focus:outline-none mobile-menu-btn">
+
+                <i class="fas fa-bars text-2xl gold-text"></i>
+
+            </button>
+
+        </div>
+
+        
+
+        <div class="mobile-menu hidden md:hidden bg-white absolute w-full left-0 shadow-lg z-10">
+
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+
+                <a href="#" class="nav-link" data-key="nav-home">Kezdőlap</a>
+
+                <a href="#apartments" class="nav-link" data-key="nav-apartments">Apartmanok</a>
+
+                <a href="#amenities" class="nav-link" data-key="nav-amenities">Szolgáltatások</a>
+
+                <a href="#neighborhood" class="nav-link" data-key="nav-neighborhood">Környék</a>
+
+                <a href="#contact" class="nav-link" data-key="nav-contact">Kapcsolat</a>
+
+                <a href="https://www.booking.com/hotel/hu/kutny-residence-chateau-schaal-hegyhatsal.hu.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaA6IAQGYARG4ARfIAQ_YAQHoAQH4AQyIAgGoAgO4Asfa0cEGwAIB0gIkNDBlMmRjMWMtMDc3MC00YWMzLWJjZWUtY2M2ZDc1M2RlNDA52AIG4AIB&sid=3fceb0e7803fdb0473ca72152fe16c03&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1748266333&srpvid=dae65f2b336e0361&type=total&ucfs=1&" target="_blank" class="px-4 py-2 gold-bg text-white hover:bg-opacity-90 transition text-center booking-btn" data-key="nav-book">Foglalás</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    
+
+    <section class="hero text-white py-32 px-4">
+
+        <div class="container mx-auto text-center">
+
+            <h1 class="font-playfair text-5xl md:text-6xl mb-6" data-key="hero-title">Fedezze fel az Őrség békéjét</h1>
+
+            <p class="text-xl max-w-2xl mx-auto mb-8" data-key="hero-subtitle">Hangulatos, teljesen felszerelt apartmanok a természet ölelésében, a tökéletes kikapcsolódásra.</p>
+
+            <a href="#apartments" class="inline-block px-8 py-3 gold-bg text-white text-lg font-semibold hover:bg-opacity-90 transition booking-btn" data-key="hero-button">Apartmanjaink</a>
+
+        </div>
+
+    </section>
+
+    
+
+    <div class="zigzag"></div>
+
+    
+
+    <section class="py-16 bg-white fade-in-on-scroll">
+
+        <div class="container mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <h2 class="font-playfair text-3xl md:text-4xl mb-4 art-deco-border pb-4 inline-block" data-key="about-title">Hegyhátsáli Vendégház</h2>
+
+                <p class="text-lg max-w-3xl mx-auto mt-6" data-key="about-text">A Hegyhátsáli Vendégház egy csendes, zöld övezetben található, ahol a természet közelsége és a modern kényelem tökéletes harmóniában egyesül. Vendégházunk apartmanja ideális választás kisebb családoknak vagy baráti társaságoknak, akik a város zajától távol szeretnének kikapcsolódni.</p>
+
+            </div>
+
+            
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="text-center p-6">
+
+                    <div class="text-5xl gold-text mb-4"><i class="fas fa-home"></i></div>
+
+                    <h3 class="font-playfair text-xl mb-3" data-key="about-feature1-title">Otthonos hangulat</h3>
+
+                    <p data-key="about-feature1-text">Hagyományos és modern elemeket ötvöző belső tér, meleg hangulattal.</p>
+
+                </div>
+
+                <div class="text-center p-6">
+
+                    <div class="text-5xl gold-text mb-4"><i class="fas fa-tree"></i></div>
+
+                    <div>
+
+                        <h3 class="font-playfair text-xl mb-3" data-key="about-feature2-title">Természet közelsége</h3>
+
+                        <p data-key="about-feature2-text">Nagy kert, gyümölcsfák és sétautak a közvetlen közelben.</p>
+                    </div>
+
+                </div>
+
+                <div class="text-center p-6">
+
+                    <div class="text-5xl gold-text mb-4"><i class="fas fa-utensils"></i></div>
+
+                    <div>
+
+                        <h3 class="font-playfair text-xl mb-3" data-key="about-feature3-title">Helyi gasztronómia</h3>
+
+                        <p data-key="about-feature3-text">Kiváló lehetőségek várják a környéken a gasztronómia és a borok szerelmeseit.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section id="apartments" class="py-16 bg-gray-50 fade-in-on-scroll">
+
+        <div class="container mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <h2 class="font-playfair text-3xl md:text-4xl mb-4 art-deco-border pb-4 inline-block" data-key="apartments-title">Apartmanjaink</h2>
+
+                <p class="text-lg max-w-3xl mx-auto mt-6" data-key="apartments-subtitle">Négy különböző méretű és stílusú apartmanunk van, mindegyiket gondosan alakítottuk ki a maximális kényelem érdekében.</p>
+
+            </div>
+
+            
+
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div class="apartment-card bg-white rounded overflow-hidden">
+
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Apartmanok/Nyugati%20Apartman.jpg');" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+
+                    <div class="p-6">
+
+                        <h3 class="font-playfair text-2xl gold-text mb-2" data-key="apartment1-name">Nyugati Apartman</h3>
+
+                        <div class="flex items-center text-sm mb-4">
+
+                            <span class="mr-4"><i class="fas fa-bed gold-text mr-1"></i> <span data-key="apartment1-beds">1 hálószoba</span></span>
+                            <span class="mr-4"><i class="fas fa-bath gold-text mr-1"></i> <span data-key="apartment1-bath">1 fürdőszoba</span></span>
+                            <span class="mr-4"><i class="fas fa-kitchen-set gold-text mr-1"></i> <span data-key="apartment1-kitchen">Konyha</span></span>
+
+                            <span><i class="fas fa-expand gold-text mr-1"></i> <span data-key="apartment1-size">72 m²</span></span>
+
+                        </div>
+
+                        <p class="mb-4" data-key="apartment1-description">Nagyobb apartmanunk 1 hálószobával, nappalival, felszerelt konyhával és saját angolterasszal rendelkezik. A kertbe nyíló teraszról gyönyörű kilátás nyílik a természetbe.</p>
+
+                        <div class="flex justify-between items-center">
+
+                            <a href="https://www.booking.com/hotel/hu/kutny-residence-chateau-schaal-hegyhatsal.hu.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaA6IAQGYARG4ARfIAQ_YAQHoAQH4AQyIAgGoAgO4Asfa0cEGwAIB0gIkNDBlMmRjMWMtMDc3MC00YWMzLWJjZWUtY2M2ZDc1M2RlNDA52AIG4AIB&sid=3fceb0e7803fdb0473ca72152fe16c03&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1748266333&srpvid=dae65f2b336e0361&type=total&ucfs=1&" target="_blank" class="px-4 py-2 gold-bg text-white hover:bg-opacity-90 transition booking-btn" data-key="book-now">Foglalás</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="apartment-card bg-white rounded overflow-hidden">
+
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Apartmanok/Keleti%20apartman.jpg');" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+
+                    <div class="p-6">
+
+                        <h3 class="font-playfair text-2xl gold-text mb-2" data-key="apartment2-name">Keleti Apartman</h3>
+
+                        <div class="flex items-center text-sm mb-4">
+
+                            <span class="mr-4"><i class="fas fa-bed gold-text mr-1"></i> <span data-key="apartment2-beds">1 hálószoba</span></span>
+                            <span class="mr-4"><i class="fas fa-bath gold-text mr-1"></i> <span data-key="apartment2-bath">1 fürdőszoba</span></span>
+                            <span class="mr-4"><i class="fas fa-kitchen-set gold-text mr-1"></i> <span data-key="apartment2-kitchen">Konyha</span></span>
+
+                            <span><i class="fas fa-expand gold-text mr-1"></i> <span data-key="apartment2-size">72 m²</span></span>
+
+                        </div>
+
+                        <p class="mb-4" data-key="apartment2-description">Ugyanolyan hangulatos apartmanunk 1 hálószobával, nyitott nappalival és konyhával rendelkezik. A nagy ablakokból lenyűgöző kilátás nyílik a környező tájra.</p>
+
+                        <div class="flex justify-between items-center">
+
+                            <a href="https://www.booking.com/hotel/hu/kutny-residence-chateau-schaal-hegyhatsal.hu.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaA6IAQGYARG4ARfIAQ_YAQHoAQH4AQyIAgGoAgO4Asfa0cEGwAIB0gIkNDBlMmRjMWMtMDc3MC00YWMzLWJjZWUtY2M2ZDc1M2RlNDA52AIG4AIB&sid=3fceb0e7803fdb0473ca72152fe16c03&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1748266333&srpvid=dae65f2b336e0361&type=total&ucfs=1&" target="_blank" class="px-4 py-2 gold-bg text-white hover:bg-opacity-90 transition booking-btn" data-key="book-now">Foglalás</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="apartment-card bg-white rounded overflow-hidden">
+
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Apartmanok/Fenti%20apartman.jpg');" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+
+                    <div class="p-6">
+
+                        <h3 class="font-playfair text-2xl gold-text mb-2" data-key="apartment3-name">Déli Apartman</h3>
+
+                        <div class="flex items-center text-sm mb-4">
+
+                            <span class="mr-4"><i class="fas fa-bed gold-text mr-1"></i> <span data-key="apartment3-beds">1 hálószoba</span></span>
+                            <span class="mr-4"><i class="fas fa-bath gold-text mr-1"></i> <span data-key="apartment3-bath">1 fürdőszoba</span></span>
+
+                            <span><i class="fas fa-expand gold-text mr-1"></i> <span data-key="apartment3-size">72 m²</span></span>
+
+                        </div>
+
+                        <p class="mb-4" data-key="apartment3-description">A Déli Apartman egy kényelmes, emeleti szálláshely, melyben 1 fürdőszoba, valamint egy egybenyitott hálószoba és nappali található. Ideális választás pároknak vagy kisebb családoknak, akik terasz nélkül is élveznék a vidéki nyugalmat.</p>
+
+                        <div class="flex justify-between items-center">
+
+                            <a href="https://www.booking.com/hotel/hu/kutny-residence-chateau-schaal-hegyhatsal.hu.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaA6IAQGYARG4ARfIAQ_YAQHoAQH4AQyIAgGoAgO4Asfa0cEGwAIB0gIkNDBlMmRjMWMtMDc3MC00YWMzLWJjZWUtY2M2ZDc1M2RlNDA52AIG4AIB&sid=3fceb0e7803fdb0473ca72152fe16c03&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1748266333&srpvid=dae65f2b336e0361&type=total&ucfs=1&" target="_blank" class="px-4 py-2 gold-bg text-white hover:bg-opacity-90 transition booking-btn" data-key="book-now">Foglalás</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+
+                <div class="apartment-card bg-white rounded overflow-hidden">
+
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Apartmanok/Fenti%20apartman%202.jpg');" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+
+                    <div class="p-6">
+
+                        <h3 class="font-playfair text-2xl gold-text mb-2" data-key="apartment4-name">Északi Apartman</h3>
+
+                        <div class="flex items-center text-sm mb-4">
+
+                            <span class="mr-4"><i class="fas fa-bed gold-text mr-1"></i> <span data-key="apartment4-beds">1 hálószoba</span></span>
+                            <span class="mr-4"><i class="fas fa-bath gold-text mr-1"></i> <span data-key="apartment4-bath">1 fürdőszoba</span></span>
+
+                            <span><i class="fas fa-expand gold-text mr-1"></i> <span data-key="apartment4-size">72 m²</span></span>
+
+                        </div>
+
+                        <p class="mb-4" data-key="apartment4-description">Az Északi Apartman szintén az emeleten helyezkedik el, 1 fürdőszobával, valamint egy tágas, egy légterű hálószobával és nappalival. Modern és otthonos környezetet biztosít pároknak, akik a teraszos megoldás helyett a belső terek kényelmét részesítik előnyben.</p>
+
+                        <div class="flex justify-between items-center">
+
+                            <a href="https://www.booking.com/hotel/hu/kutny-residence-chateau-schaal-hegyhatsal.hu.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaA6IAQGYARG4ARfIAQ_YAQHoAQH4AQyIAgGoAgO4Asfa0cEGwAIB0gIkNDBlMmRjMWMtMDc3MC00YWMzLWJjZWUtY2M2ZDc1M2RlNDA52AIG4AIB&sid=3fceb0e7803fdb0473ca72152fe16c03&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1748266333&srpvid=dae65f2b336e0361&type=total&ucfs=1&" target="_blank" class="px-4 py-2 gold-bg text-white hover:bg-opacity-90 transition booking-btn" data-key="book-now">Foglalás</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section id="amenities" class="py-16 bg-white fade-in-on-scroll">
+
+        <div class="container mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <h2 class="font-playfair text-3xl md:text-4xl mb-4 art-deco-border pb-4 inline-block" data-key="amenities-title">Szolgáltatásaink</h2>
+
+                <p class="text-lg max-w-3xl mx-auto mt-6" data-key="amenities-subtitle">Apartmanjainkban és a közös területeken számos kényelmi szolgáltatást biztosítunk vendégeink számára.</p>
+
+            </div>
+
+            
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="flex items-start">
+
+                    <div class="text-3xl gold-text mr-4 mt-1"><i class="fas fa-wifi"></i></div>
+
+                    <div>
+
+                        <h3 class="font-playfair text-xl mb-2" data-key="amenity1-title">Ingyenes WiFi</h3>
+
+                        <p data-key="amenity1-text">Gyors és megbízható internetkapcsolat az egész ingatlanon.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="flex items-start">
+
+                    <div class="text-3xl gold-text mr-4 mt-1"><i class="fas fa-parking"></i></div>
+
+                    <div>
+
+                        <h3 class="font-playfair text-xl mb-2" data-key="amenity2-title">Ingyenes parkolás</h3>
+
+                        <p data-key="amenity2-text">Zárt udvarban biztonságos parkolási lehetőség.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="flex items-start">
+
+                    <div class="text-3xl gold-text mr-4 mt-1"><i class="fas fa-utensils"></i></div>
+
+                    <div>
+
+                        <h3 class="font-playfair text-xl mb-2" data-key="amenity3-title">Konyha</h3>
+
+                        <p data-key="amenity3-text">Minden apartman felszerelt konyhával rendelkezik.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="flex items-start md:col-span-3 justify-center">
+
+                    <div class="text-3xl gold-text mr-4 mt-1"><i class="bbq-icon"></i></div>
+
+                    <div>
+
+                        <h3 class="font-playfair text-xl mb-2" data-key="amenity6-title">Grill lehetőség</h3>
+
+                        <p data-key="amenity6-text">Közös grillsütő a kertben, tűzifával együtt.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section class="py-16 bg-white fade-in-on-scroll">
+
+        <div class="container mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <h2 class="font-playfair text-3xl md:text-4xl mb-4 art-deco-border pb-4 inline-block" data-key="gallery-title">Galéria</h2>
+
+                <p class="text-lg max-w-3xl mx-auto mt-6" data-key="gallery-subtitle">Tekintse meg képeinket, hogy jobban megismerje a Hegyhátsáli Vendégház hangulatát.</p>
+
+            </div>
+
+            
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                <div class="h-48 bg-cover bg-center rounded cursor-pointer hover:opacity-90 transition gallery-item" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/388775678.jpg');" data-src="https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/388775678.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+                <div class="h-48 bg-cover bg-center rounded cursor-pointer hover:opacity-90 transition gallery-item" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/388776191.jpg');" data-src="https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/388776191.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+                <div class="h-48 bg-cover bg-center rounded cursor-pointer hover:opacity-90 transition gallery-item" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/IMG-20250522-WA0003.jpg');" data-src="https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/IMG-20250522-WA0003.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+                <div class="h-48 bg-cover bg-center rounded cursor-pointer hover:opacity-90 transition gallery-item" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/IMG-20250522-WA0006.jpg');" data-src="https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/IMG-20250522-WA0006.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+                <div class="h-48 bg-cover bg-center rounded cursor-pointer hover:opacity-90 transition gallery-item" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/167117737.jpg');" data-src="https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/167117737.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+                <div class="h-48 bg-cover bg-center rounded cursor-pointer hover:opacity-90 transition gallery-item" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/388775561.jpg');" data-src="https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/388775561.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+                <div class="h-48 bg-cover bg-center rounded cursor-pointer hover:opacity-90 transition gallery-item" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/462002744_3145584178918081_693126218905916018_n.jpg');" data-src="https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/462002744_3145584178918081_693126218905916018_n.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Image+Not+Found';"></div>
+                <div class="h-48 bg-cover bg-center rounded cursor-pointer hover:opacity-90 transition gallery-item" style="background-image: url('https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/462134923_3145187428957756_8099898273532118706_n.jpg');" data-src="https://github.com/krass26/Hegyhatsali-Vendeghaz/raw/1c79d03e1dec60615e9ea653aff916b839aafee0/Hegyh%C3%A1ts%C3%A1l/Misc/462134923_3145187428957756_8099898273532118706_n.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/000000?text=Not+Found';"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section id="neighborhood" class="py-16 bg-gray-50 fade-in-on-scroll">
+
+        <div class="container mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <h2 class="font-playfair text-3xl md:text-4xl mb-4 art-deco-border pb-4 inline-block" data-key="neighborhood-title">Környékünk</h2>
+
+                <p class="text-lg max-w-3xl mx-auto mt-6" data-key="neighborhood-subtitle">A Hegyhátsáli Vendégház csendes, zöld környezetben található, de számos érdekes hely könnyen elérhető távolságra van, köztük az osztrák határ közelében is.</p>
+
+            </div>
+
+            
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+
+                <div class="bg-white p-6 rounded shadow-sm">
+
+                    <h3 class="font-playfair text-xl gold-text mb-3" data-key="neighborhood-category1">Természeti látnivalók</h3>
+
+                    <ul class="space-y-2">
+
+                        <li class="flex items-center"><i class="fas fa-tree gold-text mr-2"></i> <span data-key="neighborhood-item1">Őrségi Nemzeti Park (Közvetlen közelben)</span></li>
+                        <li class="flex items-center"><i class="fas fa-mountain gold-text mr-2"></i> <span data-key="neighborhood-item10">Kőszegi Tájvédelmi Körzet - ~45 km</span></li>
+                        <li class="flex items-center"><i class="fas fa-leaf gold-text mr-2"></i> <span data-key="neighborhood-item11">Sághegyi Tájvédelmi Körzet - ~65 km</span></li>
+                        <li class="flex items-center"><i class="fas fa-border-all gold-text mr-2"></i> <span data-key="neighborhood-item17">Hármashatár-kő (Felsőszölnök) - ~25 km</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="bg-white p-6 rounded shadow-sm">
+
+                    <h3 class="font-playfair text-xl gold-text mb-3" data-key="neighborhood-category2">Gasztronómia</h3>
+
+                    <ul class="space-y-2">
+
+                        <li class="flex items-center"><i class="fas fa-store gold-text mr-2"></i> <span data-key="neighborhood-item6">Helyi termelők piaca - 8 km</span></li>
+                        <li class="flex items-center"><i class="fas fa-utensils gold-text mr-2"></i> <span data-key="neighborhood-item12">Osztrák vidéki éttermek (Dél-Burgenland) - ~20 km</span></li>
+                        <li class="flex items-center"><i class="fas fa-industry gold-text mr-2"></i> <span data-key="neighborhood-item13">Zotter Csokoládégyár (Ausztria) - ~70 km</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="bg-white p-6 rounded shadow-sm">
+
+                    <h3 class="font-playfair text-xl gold-text mb-3" data-key="neighborhood-category3">Programok</h3>
+
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-chess-rook gold-text mr-2"></i> <span data-key="neighborhood-item18">Güssingi vár (Ausztria) - ~40 km</span></li>
+                        <li class="flex items-center"><i class="fas fa-chess-king gold-text mr-2"></i> <span data-key="neighborhood-item19">Riegersburgi vár (Ausztria) - ~70 km</span></li>
+                        <li class="flex items-center"><i class="fas fa-spa gold-text mr-2"></i> <span data-key="neighborhood-item15">Szentgotthárdi Termálpark (Magyarország) - ~15 km</span></li>
+                        <li class="flex items-center"><i class="fas fa-water gold-text mr-2"></i> <span data-key="neighborhood-item20">Loipersdorfi Termálfürdő (Ausztria) - ~55 km</span></li>
+                        <li class="flex items-center"><i class="fas fa-hiking gold-text mr-2"></i> <span data-key="neighborhood-item16">Túraútvonalak a határ mentén (Ausztria) - ~15 km</span></li>
+                        <li class="flex items-center"><i class="fas fa-bicycle gold-text mr-2"></i> <span data-key="neighborhood-item21">Kerékpárutak az Őrségben és határmentén</span></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="bg-white p-6 rounded shadow-sm">
+
+                <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded overflow-hidden">
+
+                    <iframe class="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1360.7719602283416!2d16.3768310385966!3d46.90483849182319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476833c87f2e1e07%3A0x633919e9334d7003!2sHegyh%C3%A1ts%C3%A1l%2C%20Temet%C5%91%20u.%2016-18%2C%209915!5e0!3m2!1shu!2shu!4v1716733230113!5m2!1shu!2shu" allowfullscreen="" loading="lazy"></iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section id="contact" class="py-16 bg-white fade-in-on-scroll">
+
+        <div class="container mx-auto px-6">
+
+            <div class="max-w-4xl mx-auto">
+
+                <div>
+
+                    <h2 class="font-playfair text-3xl md:text-4xl mb-6 art-deco-border pb-4 inline-block" data-key="contact-title">Kapcsolat</h2>
+
+                    <p class="mb-6" data-key="contact-text">Kérdése van apartmanjainkkal, foglalási lehetőségeinkkel kapcsolatban? Keressen minket bátran az alábbi elérhetőségeken.</p>
+
+                    
+
+                    <div class="space-y-4">
+
+                        <div class="flex items-start">
+
+                            <div class="text-xl gold-text mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></div>
+
+                            <div>
+
+                                <h3 class="font-semibold" data-key="contact-address-title">Cím</h3>
+
+                                <p data-key="contact-address">9915 Hegyhátsál, Temető utca 16-18.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flex items-start">
+
+                            <div class="text-xl gold-text mr-4 mt-1"><i class="fas fa-phone-alt"></i></div>
+
+                            <div>
+
+                                <h3 class="font-semibold" data-key="contact-phone-title">Telefon</h3>
+
+                                <p>+36 30 898 1809</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flex items-start">
+
+                            <div class="text-xl gold-text mr-4 mt-1"><i class="fas fa-envelope"></i></div>
+
+                            <div>
+
+                                <h3 class="font-semibold" data-key="contact-email-title">Email</h3>
+
+                                <p>almasikutny@gmail.com</p>
+
+                            </div>
+
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-xl gold-text mr-4 mt-1"><i class="fab fa-facebook-f"></i></div>
+                            <div>
+                                <h3 class="font-semibold" data-key="contact-facebook-title">Facebook</h3>
+                                <p><a href="https://www.facebook.com/chateauschaal" target="_blank" class="hover:underline">Chateau Schaal</a></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-xl gold-text mr-4 mt-1"><i class="fas fa-book-open"></i></div>
+                            <div>
+                                <h3 class="font-semibold" data-key="contact-booking-title">Foglalás</h3>
+                                <p><a href="https://www.booking.com/hotel/hu/kutny-residence-chateau-schaal-hegyhatsal.hu.html?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaA6IAQGYARG4ARfIAQ_YAQHoAQH4AQyIAgGoAgO4Asfa0cEGwAIB0gIkNDBlMmRjMWMtMDc3MC00YWMzLWJjZWUtY2M2ZDc1M2RlNDA52AIG4AIB&sid=3fceb0e7803fdb0473ca72152fe16c03&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1748266333&srpvid=dae65f2b336e0361&type=total&ucfs=1&" target="_blank" class="hover:underline">Booking.com</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <footer class="bg-gray-900 text-white py-12">
+
+        <div class="container mx-auto px-6">
+
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+
+                <div>
+
+                    <h3 class="font-playfair text-xl gold-text mb-4">HEGYHÁTSÁLI VENDÉGHÁZ</h3>
+
+                    <p data-key="footer-description"></p>
+
+                </div>
+
+                <div>
+
+                    <h3 class="font-semibold text-lg mb-4" data-key="footer-links-title">Gyors linkek</h3>
+
+                    <ul class="space-y-2">
+
+                        <li><a href="#" class="hover:gold-text transition" data-key="nav-home">Kezdőlap</a></li>
+
+                        <li><a href="#apartments" class="hover:gold-text transition" data-key="nav-apartments">Szobák</a></li>
+
+                        <li><a href="#amenities" class="hover:gold-text transition" data-key="nav-amenities">Szolgáltatások</a></li>
+
+                        <li><a href="#neighborhood" class="hover:gold-text transition" data-key="nav-neighborhood">Környék</a></li>
+
+                        <li><a href="#contact" class="hover:gold-text transition" data-key="nav-contact">Kapcsolat</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h3 class="font-semibold text-lg mb-4" data-key="footer-social-title">Közösségi média</h3>
+
+                    <div class="flex space-x-4 mb-4">
+
+                        <a href="https://www.facebook.com/chateauschaal" target="_blank" class="text-xl hover:gold-text transition"><i class="fab fa-facebook-f"></i></a>
+
+                    </div>
+
+                    <p>#hegyhátsálivendégház</p>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
+
+                <p>© <span id="copyright-year"></span> <span data-key="footer-copyright-text"></span></p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    
+
+    <div id="lightboxOverlay" class="lightbox-overlay">
+        <div class="lightbox-content">
+            <button class="lightbox-close">×</button>
+            <img id="lightboxImage" src="" alt="Enlarged Image">
+        </div>
+    </div>
+
+    <script>
+
+        // Language translations
+
+        const translations = {
+
+            hu: {
+
+                // Navigation
+
+                "nav-home": "Kezdőlap",
+
+                "nav-apartments": "Apartmanok",
+
+                "nav-amenities": "Szolgáltatások",
+
+                "nav-neighborhood": "Környék",
+
+                "nav-contact": "Kapcsolat",
+
+                "nav-book": "Foglalás",
+
+                
+
+                // Hero
+
+                "hero-title": "Fedezze fel az Őrség békéjét",
+
+                "hero-subtitle": "Hangulatos, teljesen felszerelt apartmanok a természet ölelésében, tökéletes kikapcsolódásra.",
+
+                "hero-button": "Apartmanjaink",
+
+                
+
+                // About
+
+                "about-title": "Hegyhátsáli Vendégház",
+
+                "about-text": "A Hegyhátsáli Vendégház egy csendes, zöld övezetben található, ahol a természet közelsége és a modern kényelem tökéletes harmóniában egyesül. Vendégházunk négy apartmanja ideális választás kisebb családoknak vagy baráti társaságoknak, akik a város zajától távol szeretnének kikapcsolódni.",
+
+                "about-feature1-title": "Otthonos hangulat",
+
+                "about-feature1-text": "Hagyományos és modern elemeket ötvöző belső tér, meleg hangulattal.",
+
+                "about-feature2-title": "Természet közelsége",
+
+                "about-feature2-text": "Nagy kert, gyümölcsfák és sétautak a közvetlen közelben.",
+
+                "about-feature3-title": "Helyi gasztronómia",
+
+                "about-feature3-text": "Kiváló lehetőségek várják a környéken a gasztronómia és a borok szerelmeseit.",
+
+                
+
+                // Apartments
+
+                "apartments-title": "Apartmanjaink",
+
+                "apartments-subtitle": "Négy különböző méretű és stílusú apartmanunk van, mindegyiket gondosan alakítottuk ki a maximális kényelem érdekében.",
+
+                "apartment1-name": "Nyugati Apartman",
+
+                "apartment1-beds": "1 hálószoba",
+                "apartment1-bath": "1 fürdőszoba",
+                "apartment1-kitchen": "Konyha",
+
+                "apartment1-size": "72 m²",
+
+                "apartment1-description": "Nagyobb apartmanunk 1 hálószobával, nappalival, felszerelt konyhával és saját angolterasszal rendelkezik. A kertbe nyíló teraszról gyönyörű kilátás nyílik a természetbe.",
+
+                "apartment2-name": "Keleti Apartman",
+
+                "apartment2-beds": "1 hálószoba",
+                "apartment2-bath": "1 fürdőszoba",
+                "apartment2-kitchen": "Konyha",
+
+                "apartment2-size": "72 m²",
+
+                "apartment2-description": "Ugyanolyan hangulatos apartmanunk 1 hálószobával, nyitott nappalival és konyhával rendelkezik. A nagy ablakokból lenyűgöző kilátás nyílik a környező tájra.",
+
+                "apartment3-name": "Déli Apartman",
+
+                "apartment3-beds": "1 hálószoba",
+                "apartment3-bath": "1 fürdőszoba",
+                "apartment3-size": "72 m²",
+                "apartment3-description": "A Déli Apartman egy kényelmes, emeleti szálláshely, melyben 1 fürdőszoba, valamint egy egybenyitott hálószoba és nappali található. Ideális választás pároknak vagy kisebb családoknak, akik terasz nélkül is élveznék a vidéki nyugalmat.",
+
+                "apartment4-name": "Északi Apartman",
+
+                "apartment4-beds": "1 hálószoba",
+                "apartment4-bath": "1 fürdőszoba",
+                "apartment4-size": "72 m²",
+                "apartment4-description": "Az Északi Apartman szintén az emeleten helyezkedik el, 1 fürdőszobával, valamint egy tágas, egy légterű hálószobával és nappalival. Modern és otthonos környezetet biztosít pároknak, akik a teraszos megoldás helyett a belső terek kényelmét részesítik előnyben.",
+
+                "book-now": "Foglalás",
+
+                
+
+                // Amenities
+
+                "amenities-title": "Szolgáltatásaink",
+
+                "amenities-subtitle": "Apartmanjainkban és a közös területeken számos kényelmi szolgáltatást biztosítunk vendégeink számára.",
+
+                "amenity1-title": "Ingyenes WiFi",
+
+                "amenity1-text": "Gyors és megbízható internetkapcsolat az egész ingatlanon.",
+
+                "amenity2-title": "Ingyenes parkolás",
+
+                "amenity2-text": "Zárt udvarban biztonságos parkolási lehetőség.",
+
+                "amenity3-title": "Konyha",
+
+                "amenity3-text": "Minden apartman felszerelt konyhával rendelkezik.",
+
+                "amenity6-title": "Grill lehetőség",
+
+                "amenity6-text": "Közös grillsütő a kertben, tűzifával együtt.",
+
+                
+
+                // Neighborhood
+
+                "neighborhood-title": "Környékünk",
+
+                "neighborhood-subtitle": "A Hegyhátsáli Vendégház csendes, zöld környezetben található, de számos érdekes hely könnyen elérhető távolságra van, köztük az osztrák határ közelében is.",
+
+                "neighborhood-category1": "Természeti látnivalók",
+
+                "neighborhood-item1": "Őrségi Nemzeti Park (Közvetlen közelben)",
+                "neighborhood-item10": "Kőszegi Tájvédelmi Körzet - ~45 km",
+                "neighborhood-item11": "Sághegyi Tájvédelmi Körzet - ~65 km",
+                "neighborhood-item17": "Hármashatár-kő (Felsőszölnök) - ~25 km",
+                
+
+                "neighborhood-category2": "Gasztronómia",
+
+                "neighborhood-item6": "Helyi termelők piaca - 8 km",
+                "neighborhood-item12": "Osztrák vidéki éttermek (Dél-Burgenland) - ~20 km",
+                "neighborhood-item13": "Zotter Csokoládégyár (Ausztria) - ~70 km",
+                
+
+                "neighborhood-category3": "Programok",
+
+                "neighborhood-item18": "Güssingi vár (Ausztria) - ~40 km",
+                "neighborhood-item19": "Riegersburgi vár (Ausztria) - ~70 km",
+                "neighborhood-item15": "Szentgotthárdi Termálpark (Magyarország) - ~15 km",
+                "neighborhood-item20": "Loipersdorfi Termálfürdő (Ausztria) - ~55 km",
+                "neighborhood-item16": "Túraútvonalak a határ mentén (Ausztria) - ~15 km",
+                "neighborhood-item21": "Kerékpárutak az Őrségben és határmentén",
+                
+
+                // Gallery
+
+                "gallery-title": "Galéria",
+
+                "gallery-subtitle": "Tekintse meg képeinket, hogy jobban megismerje a Hegyhátsáli Vendégház hangulatát.",
+
+                
+
+                // Contact
+
+                "contact-title": "Kapcsolat",
+
+                "contact-text": "Kérdése van apartmanjainkkal, foglalási lehetőségeinkkel kapcsolatban? Keressen minket bátran az alábbi elérhetőségeken.",
+
+                "contact-address-title": "Cím",
+
+                "contact-address": "9915 Hegyhátsál, Temető utca 16-18.",
+
+                "contact-phone-title": "Telefon",
+
+                "contact-email-title": "Email",
+                "contact-facebook-title": "Facebook",
+                "contact-booking-title": "Foglalás",
+
+                
+
+                // Footer
+
+                "footer-description": "A Hegyhátsáli Vendégház az Őrség szívében, idilli környezetben várja vendégeit. Tökéletes hely a kikapcsolódásra, a természet közelségének élvezetére és a vidéki nyugalom megtapasztalására.",
+
+                "footer-links-title": "Gyors linkek",
+
+                "footer-social-title": "Közösségi média",
+
+                "footer-copyright-text": "Hegyhátsáli Vendégház. Minden jog fenntartva."
+
+            },
+
+            en: {
+
+                // Navigation
+
+                "nav-home": "Home",
+
+                "nav-apartments": "Apartments",
+
+                "nav-amenities": "Amenities",
+
+                "nav-neighborhood": "Neighborhood",
+
+                "nav-contact": "Contact",
+
+                "nav-book": "Book Now",
+
+                
+
+                // Hero
+
+                "hero-title": "Discover the Peace of Őrség",
+
+                "hero-subtitle": "Cozy, fully equipped apartments in the embrace of nature, perfect for relaxation.",
+
+                "hero-button": "Our Apartments",
+
+                
+
+                // About
+
+                "about-title": "Hegyhátsál Guesthouse",
+
+                "about-text": "Hegyhátsál Guesthouse is located in a quiet, green area where the proximity of nature and modern comfort unite in perfect harmony. Our guesthouse apartments are an ideal choice for small families or groups of friends who want to relax away from the noise of the city.",
+
+                "about-feature1-title": "Homely atmosphere",
+
+                "about-feature1-text": "Interior combining traditional and modern elements with a warm atmosphere.",
+
+                "about-feature2-title": "Close to nature",
+
+                "about-feature2-text": "Large garden, fruit trees and walking paths in the immediate vicinity.",
+
+                "about-feature3-title": "Local gastronomy",
+
+                "about-feature3-text": "Excellent opportunities await gastronomy and wine lovers in the neighborhood.",
+
+                
+
+                // Apartments
+
+                "apartments-title": "Our Apartments",
+
+                "apartments-subtitle": "We have four apartments of different sizes and styles, each carefully designed for maximum comfort.",
+
+                "apartment1-name": "Western Apartment",
+
+                "apartment1-beds": "1 bedroom",
+                "apartment1-bath": "1 bathroom",
+                "apartment1-kitchen": "Kitchen",
+
+                "apartment1-size": "72 m²",
+
+                "apartment1-description": "Our larger apartment with 1 bedroom, living room, equipped kitchen and private terrace. The terrace opening to the garden offers a beautiful view of nature.",
+
+                "apartment2-name": "Eastern Apartment",
+
+                "apartment2-beds": "1 bedroom",
+                "apartment2-bath": "1 bathroom",
+                "apartment2-kitchen": "Kitchen",
+
+                "apartment2-size": "72 m²",
+
+                "apartment2-description": "Our equally cozy apartment with 1 bedroom, open living room and kitchen. The large windows offer a stunning view of the surrounding landscape.",
+
+                "apartment3-name": "Southern Apartment",
+
+                "apartment3-beds": "1 bedroom",
+                "apartment3-bath": "1 bathroom",
+                "apartment3-size": "72 m²",
+                "apartment3-description": "The Southern Apartment is a comfortable upstairs accommodation featuring 1 bathroom and an open-plan bedroom and living room. It's an ideal choice for couples or small families who wish to enjoy rural tranquility without a terrace.",
+
+                "apartment4-name": "Northern Apartment",
+
+                "apartment4-beds": "1 bedroom",
+                "apartment4-bath": "1 bathroom",
+                "apartment4-size": "72 m²",
+                "apartment4-description": "The Northern Apartment is also located on the upper floor, offering 1 bathroom and a spacious open-plan bedroom and living room. It provides a modern and cozy environment for couples who prefer the comfort of indoor spaces over a terrace.",
+
+                "book-now": "Book Now",
+
+                
+
+                // Amenities
+
+                "amenities-title": "Our Amenities",
+
+                "amenities-subtitle": "We provide many comfort services in our apartments and common areas for our guests.",
+
+                "amenity1-title": "Free WiFi",
+
+                "amenity1-text": "Fast and reliable internet connection throughout the property.",
+
+                "amenity2-title": "Free parking",
+
+                "amenity2-text": "Safe parking option in a closed courtyard.",
+
+                "amenity3-title": "Kitchen",
+
+                "amenity3-text": "Every apartment has an equipped kitchen.",
+
+                "amenity6-title": "BBQ facilities",
+
+                "amenity6-text": "Shared barbecue in the garden, with firewood included.",
+
+                
+
+                // Neighborhood
+
+                "neighborhood-title": "Our Neighborhood",
+
+                "neighborhood-subtitle": "Hegyhátsál Guesthouse is located in a quiet, green environment, but many interesting places are easily accessible, including near the Austrian border.",
+
+                "neighborhood-category1": "Natural attractions",
+
+                "neighborhood-item1": "Őrség National Park (Immediately nearby)",
+                "neighborhood-item10": "Kőszeg Landscape Protection Area - ~45 km",
+                "neighborhood-item11": "Ság Hill Landscape Protection Area - ~65 km",
+                "neighborhood-item17": "Triple Border Stone (Felsőszölnök) - ~25 km",
+                
+
+                "neighborhood-category2": "Gastronomy",
+
+                "neighborhood-item6": "Local farmers' market - 8 km",
+                "neighborhood-item12": "Austrian rural restaurants (South Burgenland) - ~20 km",
+                "neighborhood-item13": "Zotter Chocolate Manufactory (Austria) - ~70 km",
+                
+
+                // Activities
+
+                "neighborhood-category3": "Activities",
+
+                "neighborhood-item18": "Güssing Castle (Austria) - ~40 km",
+                "neighborhood-item19": "Riegersburg Castle (Austria) - ~70 km",
+                "neighborhood-item15": "Szentgotthárd Thermal Park (Hungary) - ~15 km",
+                "neighborhood-item20": "Loipersdorf Thermal Spa (Austria) - ~55 km",
+                "neighborhood-item16": "Hiking trails along the border (Austria) - ~15 km",
+                "neighborhood-item21": "Bicycle paths in Őrség and along the border",
+                
+
+                // Gallery
+
+                "gallery-title": "Gallery",
+
+                "gallery-subtitle": "View our photos to get to know the atmosphere of Hegyhátsál Guesthouse better.",
+
+                
+
+                // Contact
+
+                "contact-title": "Contact",
+
+                "contact-text": "Do you have questions about our apartments or booking options? Feel free to contact us at the following contacts.",
+
+                "contact-address-title": "Address",
+
+                "contact-address": "9915 Hegyhátsál, Temető utca 16-18, Hungary",
+
+                "contact-phone-title": "Phone",
+
+                "contact-email-title": "Email",
+                "contact-facebook-title": "Facebook",
+                "contact-booking-title": "Booking.com",
+
+                
+
+                // Footer
+
+                "footer-description": "Hegyhátsál Guesthouse awaits its guests in an idyllic setting in the heart of Őrség. It's the perfect place to relax, enjoy the proximity of nature, and experience rural tranquility.",
+
+                "footer-links-title": "Quick Links",
+
+                "footer-social-title": "Social Media",
+
+                "footer-copyright-text": "Hegyhátsál Guesthouse. All rights reserved."
+
+            }
+
+        };
+
+        // Current language
+
+        let currentLang = 'hu';
+
+        // Function to change language
+
+        function changeLanguage(lang) {
+
+            currentLang = lang;
+
+            document.querySelector('.lang-current').textContent = lang.toUpperCase();
+
+            
+
+            // Update all elements with data-key attribute
+
+            document.querySelectorAll('[data-key]').forEach(element => {
+
+                const key = element.getAttribute('data-key');
+
+                if (translations[lang][key]) {
+
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+
+                        element.placeholder = translations[lang][key];
+
+                    } else {
+
+                        element.textContent = translations[lang][key];
+
+                    }
+
+                }
+
+            });
+
+            // Update copyright year dynamically
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
+        }
+
+        // Language switcher event listeners
+
+        document.querySelectorAll('.lang-option').forEach(option => {
+
+            option.addEventListener('click', (e) => {
+
+                e.preventDefault();
+
+                const lang = option.getAttribute('data-lang');
+
+                changeLanguage(lang);
+
+            });
+
+        });
+
+        // Mobile menu toggle
+
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+
+        });
+
+        // Close mobile menu when clicking on a link
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+
+            link.addEventListener('click', () => {
+
+                document.querySelector('.mobile-menu').classList.add('hidden');
+
+            });
+
+        });
+
+        // Smooth scrolling for anchor links
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+            anchor.addEventListener('click', function (e) {
+
+                e.preventDefault();
+                
+                // If href is just '#', scroll to top
+                if (this.getAttribute('href') === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+
+                const targetId = this.getAttribute('href');
+
+                if (targetId === '#') return;
+
+                
+
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+
+                    targetElement.scrollIntoView({
+
+                        behavior: 'smooth'
+
+                    });
+
+                }
+
+            });
+
+        });
+
+        // Intersection Observer for fade-in effect
+        const fadeInElements = document.querySelectorAll('.fade-in-on-scroll');
+
+        const observerOptions = {
+            root: null, // relative to the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the element must be visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-active');
+                    // Removed observer.unobserve(entry.target) to allow continuous fade
+                } else {
+                    entry.target.classList.remove('fade-in-active'); // Remove class when out of view
+                }
+            });
+        }, observerOptions);
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Sticky navigation bar logic
+        const mainNavbar = document.getElementById('main-navbar');
+        const stickyOffset = mainNavbar.offsetTop;
+
+        function handleScroll() {
+            if (window.scrollY > stickyOffset) {
+                mainNavbar.classList.add('sticky-nav');
+            } else {
+                mainNavbar.classList.remove('sticky-nav');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Lightbox functionality
+        const lightboxOverlay = document.getElementById('lightboxOverlay');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imageUrl = item.getAttribute('data-src');
+                lightboxImage.src = imageUrl;
+                lightboxOverlay.classList.add('active');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightboxOverlay.classList.remove('active');
+        });
+
+        lightboxOverlay.addEventListener('click', (e) => {
+            if (e.target === lightboxOverlay) {
+                lightboxOverlay.classList.remove('active');
+            }
+        });
+
+
+        // Initialize with Hungarian language
+
+        changeLanguage('hu');
+
+    </script>
+
+</body>
+
+</html>
